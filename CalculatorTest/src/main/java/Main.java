@@ -33,10 +33,12 @@ public class Main {
                 } else if (line.indexOf('*') != -1) {
                     c = a.multiply(b);
                 } else if (line.indexOf('/') != -1) {
-                    MathContext mc = new MathContext(2, RoundingMode.HALF_UP);
+                    MathContext mc = new MathContext(1, RoundingMode.HALF_DOWN);
                     c = a.divide(b, mc);
                 }
-                if(isDouble(c)) throw new MyExeption("недопустимый тип");
+
+
+                //if(isDouble(c)) throw new MyExeption("недопустимый тип");
                 if (!strNumbers[0].matches("[-+]?\\d+")) {
                     System.out.println(new RomanNumbers(c.intValue()));
                 } else {
@@ -69,3 +71,5 @@ public class Main {
         }
     }
 }
+
+
